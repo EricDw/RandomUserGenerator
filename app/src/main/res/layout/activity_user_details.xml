@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:bind="http://schemas.android.com/apk/res-auto">
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <import type="com.publicmethod.owner.randomusergenerator.model.Result"/>
 
-        <import type="com.publicmethod.owner.randomusergenerator.utils.ListItemClickHandler"/>
+        <import type="com.publicmethod.owner.randomusergenerator.utils.UserDetailsClickHandler"/>
 
         <variable
             name="result"
@@ -16,7 +16,7 @@
 
         <variable
             name="handler"
-            type="ListItemClickHandler"/>
+            type="UserDetailsClickHandler"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -59,7 +59,8 @@
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
 
-        <include layout="@layout/content_user_details"
+        <include
+            layout="@layout/content_user_details"
             bind:result="@{result}"/>
 
         <android.support.design.widget.FloatingActionButton
@@ -68,8 +69,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
             android:src="@android:drawable/ic_dialog_email"
+            android:onClick="@{handler::fabClicked}"
             app:layout_anchor="@id/app_bar"
-            app:layout_anchorGravity="bottom|end"/>
+            app:layout_anchorGravity="bottom|right|end"/>
 
     </android.support.design.widget.CoordinatorLayout>
 </layout>

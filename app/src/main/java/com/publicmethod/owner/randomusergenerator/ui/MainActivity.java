@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private RandomResultsRecyclerViewBindingAdapter mRandomResultsRecyclerViewBindingAdapter;
     private ArrayList<Result> mRandomUserResults = new ArrayList<Result>();
 
+    // TODO: 2016-05-12 Implement Data Binding on this class
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Fetch the response
-        randomUserClient.multipleResultsCall(5).enqueue(new Callback<RandomUserResults>() {
+        randomUserClient.multipleResultsCall(20).enqueue(new Callback<RandomUserResults>() {
 
             @Override
             public void onResponse(Call<RandomUserResults> call, Response<RandomUserResults> response) {
@@ -93,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // TODO: 2016-05-10 Move this method to the adapter
     private void addResultsToList(List<Result> results) {
         for (int i = 0; i < results.size(); i++) {
             mRandomUserResults.add(results.get(i));

@@ -6,5 +6,6 @@ import android.view.View;
  * Created by Eric De Wildt on 2016-05-12.
  */
 public interface UserDetailsClickHandler {
-    String formattedAddress(View view);
+    void fabClicked(View view);
+
 }
