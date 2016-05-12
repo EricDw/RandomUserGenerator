@@ -9,9 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.publicmethod.owner.randomusergenerator.BR;
-import com.publicmethod.owner.randomusergenerator.R;
+import com.publicmethod.owner.randomusergenerator.databinding.ListItemCardBinding;
 import com.publicmethod.owner.randomusergenerator.model.Result;
 import com.publicmethod.owner.randomusergenerator.ui.UserDetailsActivity;
+import com.publicmethod.owner.randomusergenerator.utils.ItemClickHandlers;
 
 import java.util.List;
 
@@ -27,8 +28,8 @@ public class RandomResultsRecyclerViewBindingAdapter extends RecyclerView.Adapte
     }
 
 
-    public static class ContactsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private ViewDataBinding mViewDataBinding;
+    public static class ContactsViewHolder extends RecyclerView.ViewHolder {
+        private ListItemCardBinding mViewDataBinding;
 
         public ContactsViewHolder(View itemView) {
             super(itemView);
@@ -39,32 +40,30 @@ public class RandomResultsRecyclerViewBindingAdapter extends RecyclerView.Adapte
         public ViewDataBinding getViewDataBinding() {
             return mViewDataBinding;
         }
-
-        @Override
-        public void onClick(View v) {
-            // Open UserDetailsActivity
-            Intent intent = new Intent(v.getContext(), UserDetailsActivity.class);
-            Result result = mRandomUserResults.get(getAdapterPosition());
-            intent.putExtra("result", result);
-            v.getContext().startActivity(intent);
-
-        }
     }
 
     @Override
     public ContactsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View cardView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item_card, parent, false);
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        ListItemCardBinding listItemCardBinding = ListItemCardBinding.inflate(layoutInflater, parent, false);
 
-        return new ContactsViewHolder(cardView);
+        return new ContactsViewHolder(listItemCardBinding.getRoot());
     }
 
     @Override
-    public void onBindViewHolder(ContactsViewHolder holder, int position) {
+    public void onBindViewHolder(ContactsViewHolder holder, final int position) {
 
         final Result result = mRandomUserResults.get(position);
         holder.getViewDataBinding().setVariable(BR.result, result);
+        holder.mViewDataBinding.setHandler(new ItemClickHandlers() {
+            @Override
+            public void passResultToNewActivity(View view) {
+                Intent intent = new Intent(view.getContext(), UserDetailsActivity.class);
+                intent.putExtra("result", result);
+                view.getContext().startActivity(intent);
+            }
+        });
         holder.getViewDataBinding().executePendingBindings();
     }
 

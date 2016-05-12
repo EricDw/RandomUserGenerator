@@ -7,6 +7,12 @@
 
         <import type="com.publicmethod.owner.randomusergenerator.model.Result"/>
 
+        <import type="com.publicmethod.owner.randomusergenerator.utils.ItemClickHandlers"/>
+
+        <variable
+            name="handler"
+            type="ItemClickHandlers"/>
+
         <variable
             name="result"
             type="Result"/>
@@ -18,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/cardView_vertical_margin"
         android:layout_marginTop="@dimen/cardView_vertical_margin"
+        android:onClick="@{handler.passResultToNewActivity}"
         tools:context=".ui.MainActivity"
         >
 
