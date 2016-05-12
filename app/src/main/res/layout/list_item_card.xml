@@ -7,11 +7,11 @@
 
         <import type="com.publicmethod.owner.randomusergenerator.model.Result"/>
 
-        <import type="com.publicmethod.owner.randomusergenerator.utils.ItemClickHandlers"/>
+        <import type="com.publicmethod.owner.randomusergenerator.utils.ListItemClickHandler"/>
 
         <variable
             name="handler"
-            type="ItemClickHandlers"/>
+            type="ListItemClickHandler"/>
 
         <variable
             name="result"
@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/cardView_vertical_margin"
         android:layout_marginTop="@dimen/cardView_vertical_margin"
+        android:clickable="true"
         android:onClick="@{handler.passResultToNewActivity}"
         tools:context=".ui.MainActivity"
         >
@@ -51,7 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="@dimen/activity_horizontal_margin"
-                    android:text="@{result.name.first}"
+                    android:text="@{result.name.formattedName}"
                     tools:text="stuff"
                     />
 

@@ -14,4 +14,5 @@ public class CustomBindingAdapter {
     public static void loadImage(ImageView imageView, String url){
         Picasso.with(imageView.getContext()).load(url).into(imageView);
     }
+
 }

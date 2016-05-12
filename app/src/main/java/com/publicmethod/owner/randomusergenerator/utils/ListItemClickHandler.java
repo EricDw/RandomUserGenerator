@@ -6,7 +6,7 @@ import android.view.View;
  * This interface offers empty methods designed to be overridden.
  * Created by Eric De Wildt on 2016-05-12.
  */
-public interface ItemClickHandlers {
+public interface ListItemClickHandler {
 
 
     /**

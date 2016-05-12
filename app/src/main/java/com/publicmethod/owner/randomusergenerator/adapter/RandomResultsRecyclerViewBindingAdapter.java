@@ -12,7 +12,7 @@ import com.publicmethod.owner.randomusergenerator.BR;
 import com.publicmethod.owner.randomusergenerator.databinding.ListItemCardBinding;
 import com.publicmethod.owner.randomusergenerator.model.Result;
 import com.publicmethod.owner.randomusergenerator.ui.UserDetailsActivity;
-import com.publicmethod.owner.randomusergenerator.utils.ItemClickHandlers;
+import com.publicmethod.owner.randomusergenerator.utils.ListItemClickHandler;
 
 import java.util.List;
 
@@ -56,7 +56,7 @@ public class RandomResultsRecyclerViewBindingAdapter extends RecyclerView.Adapte
 
         final Result result = mRandomUserResults.get(position);
         holder.getViewDataBinding().setVariable(BR.result, result);
-        holder.mViewDataBinding.setHandler(new ItemClickHandlers() {
+        holder.mViewDataBinding.setHandler(new ListItemClickHandler() {
             @Override
             public void passResultToNewActivity(View view) {
                 Intent intent = new Intent(view.getContext(), UserDetailsActivity.class);
