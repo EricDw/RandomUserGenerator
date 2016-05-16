@@ -1,5 +1,7 @@
 package com.publicmethod.owner.randomusergenerator.ui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,11 +14,24 @@ import com.publicmethod.owner.randomusergenerator.databinding.ActivityUserDetail
 import com.publicmethod.owner.randomusergenerator.model.Result;
 import com.publicmethod.owner.randomusergenerator.utils.handlers.UserDetailsClickHandler;
 
+import org.jetbrains.annotations.Contract;
+
 public class UserDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "UserDetailsActivity";
 
     private Result mResult;
+
+    /**
+     * A helper method for starting UserDetailsActivity.
+     *
+     * @param context The activity or fragment context starting UserDetailsActivity.class.
+     * @return Intent containing the provided Context and UserDetailsActivity.class.
+     */
+    @Contract("_ -> !null")
+    public static Intent getStartIntent(Context context) {
+        return new Intent(context, UserDetailsActivity.class);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

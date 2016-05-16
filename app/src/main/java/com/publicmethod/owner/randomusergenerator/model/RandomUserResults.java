@@ -9,13 +9,12 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RandomUserResults extends BaseObservable implements Parcelable {
 
     @SerializedName("results")
     @Expose
-    private List<Result> results;
+    private ArrayList<Result> results;
     @SerializedName("info")
     @Expose
     private Info info;
@@ -44,14 +43,14 @@ public class RandomUserResults extends BaseObservable implements Parcelable {
     /**
      * @return The results
      */
-    public List<Result> getResults() {
+    public ArrayList<Result> getResults() {
         return results;
     }
 
     /**
      * @param results The results
      */
-    public void setResults(List<Result> results) {
+    public void setResults(ArrayList<Result> results) {
         this.results = results;
     }
 

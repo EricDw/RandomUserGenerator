@@ -9,6 +9,11 @@
 
         <import type="com.publicmethod.owner.randomusergenerator.utils.handlers.ListItemClickHandler"/>
 
+        <import type="com.publicmethod.owner.randomusergenerator.viewmodels.MainActivityViewModel"/>
+
+        <variable
+            name="viewModel"
+            type="MainActivityViewModel"/>
 
         <variable
             name="handler"
@@ -26,7 +31,7 @@
         android:layout_marginBottom="@dimen/cardView_vertical_margin"
         android:layout_marginTop="@dimen/cardView_vertical_margin"
         android:clickable="true"
-        android:onClick="@{handler.passResultToDetailsActivity}"
+        android:onClick="@{viewModel.showDetails}"
         tools:context=".ui.MainActivity"
         >
 
@@ -53,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="@dimen/activity_horizontal_margin"
-                    android:text="@{result.name.formattedName}"
+                    android:text="@{viewModel.getFormattedName}"
                     tools:text="stuff"
                     />
 

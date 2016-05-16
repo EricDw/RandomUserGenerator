@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView_contacts);
-        mRandomResultsRecyclerViewBindingAdapter = new RandomResultsRecyclerViewBindingAdapter(mRandomUserResults);
+        mRandomResultsRecyclerViewBindingAdapter = new RandomResultsRecyclerViewBindingAdapter(this);
         mLinearLayoutManager = new LinearLayoutManager(this);
 
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
@@ -76,13 +76,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<RandomUserResults> call, Response<RandomUserResults> response) {
-                if (!mRandomUserResults.isEmpty()) {
-                    mRandomUserResults.clear();
+                    mRandomResultsRecyclerViewBindingAdapter.setRandomUserResults(response.body().getResults());
                     mRandomResultsRecyclerViewBindingAdapter.notifyDataSetChanged();
-                    addResultsToList(response.body().getResults());
-                } else {
-                    addResultsToList(response.body().getResults());
-                }
             }
 
             @Override
