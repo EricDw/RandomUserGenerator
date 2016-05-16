@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.publicmethod.owner.randomusergenerator.R;
 import com.publicmethod.owner.randomusergenerator.databinding.ActivityUserDetailsBinding;
 import com.publicmethod.owner.randomusergenerator.model.Result;
-import com.publicmethod.owner.randomusergenerator.utils.UserDetailsClickHandler;
+import com.publicmethod.owner.randomusergenerator.utils.handlers.UserDetailsClickHandler;
 
 public class UserDetailsActivity extends AppCompatActivity {
 

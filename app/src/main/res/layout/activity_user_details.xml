@@ -8,7 +8,7 @@
 
         <import type="com.publicmethod.owner.randomusergenerator.model.Result"/>
 
-        <import type="com.publicmethod.owner.randomusergenerator.utils.UserDetailsClickHandler"/>
+        <import type="com.publicmethod.owner.randomusergenerator.utils.handlers.UserDetailsClickHandler"/>
 
         <variable
             name="result"
@@ -68,8 +68,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
-            android:src="@android:drawable/ic_dialog_email"
             android:onClick="@{handler::fabClicked}"
+            android:src="@mipmap/ic_star_outline_white_24dp"
+            app:fabSize="normal"
             app:layout_anchor="@id/app_bar"
             app:layout_anchorGravity="bottom|right|end"/>
 

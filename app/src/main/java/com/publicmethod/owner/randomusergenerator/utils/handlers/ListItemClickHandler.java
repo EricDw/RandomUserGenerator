@@ -1,4 +1,4 @@
-package com.publicmethod.owner.randomusergenerator.utils;
+package com.publicmethod.owner.randomusergenerator.utils.handlers;
 
 import android.view.View;
 
@@ -14,6 +14,6 @@ public interface ListItemClickHandler {
      *
      * @param view   The view being clicked.
      */
-    void passResultToNewActivity(View view);
+    void passResultToDetailsActivity(View view);
 
 }

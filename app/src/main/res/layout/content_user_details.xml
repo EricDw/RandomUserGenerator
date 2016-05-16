@@ -7,7 +7,7 @@
 
         <import type="com.publicmethod.owner.randomusergenerator.model.Result"/>
 
-        <import type="com.publicmethod.owner.randomusergenerator.utils.UserDetailsClickHandler"/>
+        <import type="com.publicmethod.owner.randomusergenerator.utils.handlers.UserDetailsClickHandler"/>
 
         <variable
             name="result"

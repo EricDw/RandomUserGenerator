@@ -7,7 +7,8 @@
 
         <import type="com.publicmethod.owner.randomusergenerator.model.Result"/>
 
-        <import type="com.publicmethod.owner.randomusergenerator.utils.ListItemClickHandler"/>
+        <import type="com.publicmethod.owner.randomusergenerator.utils.handlers.ListItemClickHandler"/>
+
 
         <variable
             name="handler"
@@ -25,7 +26,7 @@
         android:layout_marginBottom="@dimen/cardView_vertical_margin"
         android:layout_marginTop="@dimen/cardView_vertical_margin"
         android:clickable="true"
-        android:onClick="@{handler.passResultToNewActivity}"
+        android:onClick="@{handler.passResultToDetailsActivity}"
         tools:context=".ui.MainActivity"
         >
 

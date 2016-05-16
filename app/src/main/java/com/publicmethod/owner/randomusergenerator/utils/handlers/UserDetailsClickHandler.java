@@ -1,4 +1,4 @@
-package com.publicmethod.owner.randomusergenerator.utils;
+package com.publicmethod.owner.randomusergenerator.utils.handlers;
 
 import android.view.View;
 
