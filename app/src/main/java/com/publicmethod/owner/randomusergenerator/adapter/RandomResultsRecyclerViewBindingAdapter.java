@@ -74,7 +74,7 @@ public class RandomResultsRecyclerViewBindingAdapter extends RecyclerView.Adapte
         private ListItemCardBinding mViewDataBinding;
 
         public ContactsViewHolder(ListItemCardBinding listItemCardBinding) {
-            super(listItemCardBinding.getRoot());
+            super(listItemCardBinding.cardViewListItem);
             mViewDataBinding = listItemCardBinding;
         }
     }

@@ -7,15 +7,15 @@
 
         <import type="com.publicmethod.owner.randomusergenerator.model.Result"/>
 
-        <import type="com.publicmethod.owner.randomusergenerator.utils.handlers.UserDetailsClickHandler"/>
+        <import type="com.publicmethod.owner.randomusergenerator.viewmodels.UserDetailsModelView"/>
 
         <variable
             name="result"
             type="Result"/>
 
         <variable
-            name="handler"
-            type="UserDetailsClickHandler"/>
+            name="viewModel"
+            type="UserDetailsModelView"/>
     </data>
 
     <android.support.v4.widget.NestedScrollView
@@ -168,7 +168,7 @@
                     android:ems="10"
                     android:hint="Address"
                     android:inputType="textPostalAddress"
-                    android:text="@{result.location.formattedAddress}"
+                    android:text="@{viewModel.getFormattedAddress}"
                     tools:text="80 Ontario St N, Milton Ontario, L9T4Z6"/>
             </android.support.design.widget.TextInputLayout>
         </GridLayout>

@@ -31,7 +31,7 @@
         android:layout_marginBottom="@dimen/cardView_vertical_margin"
         android:layout_marginTop="@dimen/cardView_vertical_margin"
         android:clickable="true"
-        android:onClick="@{viewModel.showDetails}"
+        android:onClick="@{viewModel::showDetails}"
         tools:context=".ui.MainActivity"
         >
 

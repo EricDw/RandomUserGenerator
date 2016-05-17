@@ -23,9 +23,6 @@ public class Location extends BaseObservable implements Parcelable {
     @SerializedName("postcode")
     @Expose
     private String postcode;
-    @SerializedName("formattedAddress")
-    @Expose
-    private String formattedAddress;
     public final static Parcelable.Creator<Location> CREATOR = new Creator<Location>() {
 
 
@@ -35,7 +32,6 @@ public class Location extends BaseObservable implements Parcelable {
             instance.city = ((String) in.readValue((String.class.getClassLoader())));
             instance.state = ((String) in.readValue((String.class.getClassLoader())));
             instance.postcode = ((String) in.readValue((String.class.getClassLoader())));
-            instance.formattedAddress = ((String) in.readValue((String.class.getClassLoader())));
             return instance;
         }
 
@@ -101,17 +97,6 @@ public class Location extends BaseObservable implements Parcelable {
         this.postcode = postcode;
     }
 
-    /**
-     * @return The address in a nicely formatted manner.
-     */
-    public String getFormattedAddress() {
-        return String.format("%s, %s, %s, %s",
-                getStreet(),
-                getCity(),
-                getState(),
-                getPostcode());
-    }
-
 
     @Override
     public String toString() {
@@ -128,7 +113,6 @@ public class Location extends BaseObservable implements Parcelable {
         dest.writeValue(city);
         dest.writeValue(state);
         dest.writeValue(postcode);
-        dest.writeValue(formattedAddress);
     }
 
     public int describeContents() {

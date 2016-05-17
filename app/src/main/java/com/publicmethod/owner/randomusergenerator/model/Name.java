@@ -19,9 +19,6 @@ public class Name extends BaseObservable implements Parcelable {
     @SerializedName("last")
     @Expose
     private String last;
-    @SerializedName("formattedName")
-    @Expose
-    private String formattedName;
 
     public final static Parcelable.Creator<Name> CREATOR = new Creator<Name>() {
 
@@ -33,7 +30,6 @@ public class Name extends BaseObservable implements Parcelable {
             instance.title = ((String) in.readValue((String.class.getClassLoader())));
             instance.first = ((String) in.readValue((String.class.getClassLoader())));
             instance.last = ((String) in.readValue((String.class.getClassLoader())));
-            instance.formattedName = ((String) in.readValue((String.class.getClassLoader())));
             return instance;
         }
 
@@ -85,10 +81,6 @@ public class Name extends BaseObservable implements Parcelable {
         this.last = last;
     }
 
-    public String getFormattedName() {
-        return String.format("%s %s", getFirst(), getLast());
-    }
-
     @Override
     public String toString() {
         return "Name{" +
@@ -102,7 +94,6 @@ public class Name extends BaseObservable implements Parcelable {
         dest.writeValue(title);
         dest.writeValue(first);
         dest.writeValue(last);
-        dest.writeValue(formattedName);
     }
 
     public int describeContents() {
