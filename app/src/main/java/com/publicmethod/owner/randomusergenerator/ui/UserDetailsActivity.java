@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.publicmethod.owner.randomusergenerator.R;
@@ -25,10 +26,14 @@ public class UserDetailsActivity extends AppCompatActivity {
      * @param result  The result required for populating UserDetailsActivity.
      * @return Intent containing the provided Context, result extra, and UserDetailsActivity.class.
      */
-    public static Intent getStartIntent(Context context, Result result) {
+    public static Intent getStartIntent(Context context, @Nullable Result result) {
         Intent intent = new Intent(context, UserDetailsActivity.class);
-        intent.putExtra("result", result);
-        return intent;
+        if (result == null) {
+            return intent;
+        }else {
+            intent.putExtra("result", result);
+            return intent;
+        }
     }
 
     @Override

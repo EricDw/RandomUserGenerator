@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.publicmethod.owner.randomusergenerator.viewmodels.DetailsDialogActivityViewModel"/>
+
+        <variable
+            name="viewModel"
+            type="DetailsDialogActivityViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/activity_details_dialog"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.publicmethod.owner.randomusergenerator.ui.MainActivity">
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,5 +1,7 @@
 package com.publicmethod.owner.randomusergenerator.ui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,11 +25,21 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String TAG = MainActivity.class.getSimpleName();
+    /**
+     * A helper method for starting UserDetailsActivity.
+     *
+     * @param context The activity or fragment context starting {@link MainActivity}.class.
+     * @return Intent containing the provided Context, result extra, and {@link MainActivity}.class.
+     */
+    public static Intent getStartIntent(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+            return intent;
+    }
+
+    private static final String TAG = MainActivity.class.getSimpleName();
     private LinearLayoutManager mLinearLayoutManager;
     private static RandomResultsRecyclerViewBindingAdapter mRandomResultsRecyclerViewBindingAdapter;
 
-    // TODO: 2016-05-12 Implement Data Binding on this class
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

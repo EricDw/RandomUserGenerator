@@ -29,6 +29,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.publicmethod.owner.randomusergenerator.ui.MainActivity"/>
         </activity>
+        <activity android:name=".ui.DetailsDialogActivity"
+            android:theme="@style/Base.Theme.AppCompat.Dialog">
+        </activity>
     </application>
 
 </manifest>
