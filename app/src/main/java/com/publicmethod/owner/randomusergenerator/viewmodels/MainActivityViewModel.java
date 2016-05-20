@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.publicmethod.owner.randomusergenerator.adapter.RandomResultsRecyclerViewBindingAdapter;
 import com.publicmethod.owner.randomusergenerator.model.Result;
-import com.publicmethod.owner.randomusergenerator.ui.UserDetailsActivity;
+import com.publicmethod.owner.randomusergenerator.ui.DetailsDialogActivity;
 
 /**
  * Created by Eric De Wildt on 2016-05-15.
@@ -26,7 +26,7 @@ public class MainActivityViewModel extends BaseObservable {
     }
 
     public void showDetails(View view) {
-        Intent intent = UserDetailsActivity.getStartIntent(mContext, mResult);
+        Intent intent = DetailsDialogActivity.getStartIntent(mContext, mResult);
         mContext.startActivity(intent);
     }
 

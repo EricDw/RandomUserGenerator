@@ -6,24 +6,25 @@
         tools:layout_editor_absoluteY="0dp">
 
     <data
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
         android:layout_width="0dp"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
-        <import type="com.publicmethod.owner.randomusergenerator.viewmodels.DetailsDialogActivityViewModel"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp"
-                android:layout_width="0dp"
-                android:layout_height="0dp"/>
+        <import
+            type="com.publicmethod.owner.randomusergenerator.viewmodels.DetailsDialogActivityViewModel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"/>
 
         <variable
             name="viewModel"
             type="DetailsDialogActivityViewModel"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp"
             android:layout_width="0dp"
-            android:layout_height="0dp"/>
+            android:layout_height="0dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -32,21 +33,22 @@
         android:layout_height="511dp"
         tools:context="com.publicmethod.owner.randomusergenerator.ui.MainActivity"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="81dp">
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:textAppearance="@android:style/TextAppearance.Material.Medium"
-            tools:text="80 Ontario St N"
             android:textAlignment="viewStart"
-            tools:layout_editor_absoluteX="108dp"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            tools:layout_editor_absoluteX="116dp"
             tools:layout_editor_absoluteY="0dp"
+            tools:text="80 Ontario St N"
             app:layout_constraintTop_toTopOf="@+id/activity_details_dialog"
             tools:layout_constraintTop_creator="0"
             app:layout_constraintBottom_toBottomOf="@+id/activity_details_dialog"
-            tools:layout_constraintBottom_creator="0"/>
+            tools:layout_constraintBottom_creator="0"
+            app:layout_constraintVertical_bias="1.0"/>
 
 
     </android.support.constraint.ConstraintLayout>
