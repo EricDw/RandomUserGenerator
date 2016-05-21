@@ -7,17 +7,11 @@
 
         <import type="com.publicmethod.owner.randomusergenerator.model.Result"/>
 
-        <import type="com.publicmethod.owner.randomusergenerator.utils.handlers.ListItemClickHandler"/>
-
         <import type="com.publicmethod.owner.randomusergenerator.viewmodels.MainActivityViewModel"/>
 
         <variable
             name="viewModel"
             type="MainActivityViewModel"/>
-
-        <variable
-            name="handler"
-            type="ListItemClickHandler"/>
 
         <variable
             name="result"

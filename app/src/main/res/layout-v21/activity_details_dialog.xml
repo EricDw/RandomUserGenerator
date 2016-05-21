@@ -1,30 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
 
-    <data
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-        <import
-            type="com.publicmethod.owner.randomusergenerator.viewmodels.DetailsDialogActivityViewModel"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp"/>
+    <data>
+
+        <import type="com.publicmethod.owner.randomusergenerator.viewmodels.DetailsDialogActivityViewModel"/>
 
         <variable
             name="viewModel"
-            type="DetailsDialogActivityViewModel"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp"/>
+            type="DetailsDialogActivityViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -33,23 +20,47 @@
         android:layout_height="511dp"
         tools:context="com.publicmethod.owner.randomusergenerator.ui.MainActivity"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="80dp">
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/textView_location"
+            android:layout_width="229dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:text="@{viewModel.getFormattedAddress}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+            app:layout_constraintHorizontal_bias="0.63"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_details_dialog"
+            app:layout_constraintRight_toRightOf="@+id/activity_details_dialog"
+            app:layout_constraintTop_toTopOf="@+id/imageButton"
+            app:layout_constraintVertical_bias="0.58"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="86dp"
+            tools:text="80 Ontario St N"/>
+
+
+        <ImageButton
+            android:id="@+id/imageButton"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:textAlignment="viewStart"
-            android:textAppearance="@android:style/TextAppearance.Material.Medium"
-            tools:layout_editor_absoluteX="116dp"
-            tools:layout_editor_absoluteY="0dp"
-            tools:text="80 Ontario St N"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="69dp"
+            android:contentDescription="Map Marker"
+            android:src="@android:drawable/ic_dialog_map"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_details_dialog"
             app:layout_constraintTop_toTopOf="@+id/activity_details_dialog"
-            tools:layout_constraintTop_creator="0"
-            app:layout_constraintBottom_toBottomOf="@+id/activity_details_dialog"
-            tools:layout_constraintBottom_creator="0"
-            app:layout_constraintVertical_bias="1.0"/>
+            tools:layout_constraintLeft_creator="0"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="69dp"/>
 
 
     </android.support.constraint.ConstraintLayout>
+
 </layout>

@@ -30,7 +30,7 @@ public class UserDetailsActivity extends AppCompatActivity {
         Intent intent = new Intent(context, UserDetailsActivity.class);
         if (result == null) {
             return intent;
-        }else {
+        } else {
             intent.putExtra("result", result);
             return intent;
         }

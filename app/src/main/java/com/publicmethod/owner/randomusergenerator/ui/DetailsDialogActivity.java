@@ -25,7 +25,7 @@ public class DetailsDialogActivity extends AppCompatActivity {
         Intent intent = new Intent(context, DetailsDialogActivity.class);
         if (result == null) {
             return intent;
-        }else {
+        } else {
             intent.putExtra("result", result);
             return intent;
         }
@@ -41,5 +41,7 @@ public class DetailsDialogActivity extends AppCompatActivity {
 
         activityDetailsDialogBinding.setViewModel(new DetailsDialogActivityViewModel(this, result));
         activityDetailsDialogBinding.executePendingBindings();
+
+        setTitle(DetailsDialogActivityViewModel.getFormattedName(result));
     }
 }

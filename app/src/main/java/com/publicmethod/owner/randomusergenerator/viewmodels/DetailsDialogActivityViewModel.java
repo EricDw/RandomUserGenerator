@@ -12,10 +12,9 @@ import com.publicmethod.owner.randomusergenerator.model.Result;
 public class DetailsDialogActivityViewModel extends BaseObservable {
 
 
-
-
     private Result mResult;
     private Context mContext;
+
     public DetailsDialogActivityViewModel(Context context, Result result) {
 
         mContext = context;
@@ -35,6 +34,15 @@ public class DetailsDialogActivityViewModel extends BaseObservable {
     public String getFormattedName() {
         String inputFirstName = mResult.getName().getFirst();
         String inputLastName = mResult.getName().getLast();
+        String capitalizedFirstName = inputFirstName.substring(0, 1).toUpperCase() + inputFirstName.substring(1);
+        String capitalizedLastName = inputLastName.substring(0, 1).toUpperCase() + inputLastName.substring(1);
+
+        return capitalizedFirstName + " " + capitalizedLastName;
+    }
+
+    public static String getFormattedName(Result result) {
+        String inputFirstName = result.getName().getFirst();
+        String inputLastName = result.getName().getLast();
         String capitalizedFirstName = inputFirstName.substring(0, 1).toUpperCase() + inputFirstName.substring(1);
         String capitalizedLastName = inputLastName.substring(0, 1).toUpperCase() + inputLastName.substring(1);
 
