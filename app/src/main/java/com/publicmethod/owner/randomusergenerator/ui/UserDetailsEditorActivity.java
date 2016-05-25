@@ -12,22 +12,22 @@ import com.publicmethod.owner.randomusergenerator.databinding.ActivityUserDetail
 import com.publicmethod.owner.randomusergenerator.model.Result;
 import com.publicmethod.owner.randomusergenerator.viewmodels.UserDetailsModelView;
 
-public class UserDetailsActivity extends AppCompatActivity {
+public class UserDetailsEditorActivity extends AppCompatActivity {
 
-    private static final String TAG = "UserDetailsActivity";
+    private static final String TAG = "UserDetailsEditorActivity";
 
     private Result mResult;
 
 
     /**
-     * A helper method for starting UserDetailsActivity.
+     * A helper method for starting UserDetailsEditorActivity.
      *
-     * @param context The activity or fragment context starting UserDetailsActivity.class.
-     * @param result  The result required for populating UserDetailsActivity.
-     * @return Intent containing the provided Context, result extra, and UserDetailsActivity.class.
+     * @param context The activity or fragment context starting {@link UserDetailsEditorActivity}.
+     * @param result  The result required for populating {@link UserDetailsEditorActivity}.
+     * @return Intent containing the provided Context, result extra, and {@link UserDetailsEditorActivity}.
      */
     public static Intent getStartIntent(Context context, @Nullable Result result) {
-        Intent intent = new Intent(context, UserDetailsActivity.class);
+        Intent intent = new Intent(context, UserDetailsEditorActivity.class);
         if (result == null) {
             return intent;
         } else {

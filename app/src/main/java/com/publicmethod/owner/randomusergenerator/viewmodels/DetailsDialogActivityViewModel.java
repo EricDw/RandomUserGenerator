@@ -1,9 +1,12 @@
 package com.publicmethod.owner.randomusergenerator.viewmodels;
 
 import android.content.Context;
+import android.content.Intent;
 import android.databinding.BaseObservable;
+import android.view.View;
 
 import com.publicmethod.owner.randomusergenerator.model.Result;
+import com.publicmethod.owner.randomusergenerator.ui.UserDetailsEditorActivity;
 
 /**
  * Created by Eric De Wildt on 2016-05-18.
@@ -47,5 +50,10 @@ public class DetailsDialogActivityViewModel extends BaseObservable {
         String capitalizedLastName = inputLastName.substring(0, 1).toUpperCase() + inputLastName.substring(1);
 
         return capitalizedFirstName + " " + capitalizedLastName;
+    }
+
+    public void startEditDetailsActivity(View view){
+        Intent intent = UserDetailsEditorActivity.getStartIntent(view.getContext(), mResult);
+        mContext.startActivity(intent);
     }
 }

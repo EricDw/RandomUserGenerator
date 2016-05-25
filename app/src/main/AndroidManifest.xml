@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.UserDetailsActivity"
+            android:name=".ui.UserDetailsEditorActivity"
             android:label="@string/title_activity_scrolling"
             android:parentActivityName=".ui.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -29,8 +29,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.publicmethod.owner.randomusergenerator.ui.MainActivity"/>
         </activity>
-        <activity android:name=".ui.DetailsDialogActivity"
-            android:theme="@style/Base.Theme.AppCompat.Dialog">
+        <activity
+            android:name=".ui.DetailsDialogActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">
         </activity>
     </application>
 

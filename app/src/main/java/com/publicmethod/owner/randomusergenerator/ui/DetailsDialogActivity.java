@@ -6,6 +6,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.publicmethod.owner.randomusergenerator.R;
 import com.publicmethod.owner.randomusergenerator.databinding.ActivityDetailsDialogBinding;
@@ -39,9 +40,15 @@ public class DetailsDialogActivity extends AppCompatActivity {
 
         Result result = getIntent().getParcelableExtra("result");
 
+        activityDetailsDialogBinding.setActivity(this);
         activityDetailsDialogBinding.setViewModel(new DetailsDialogActivityViewModel(this, result));
+        activityDetailsDialogBinding.setResult(result);
         activityDetailsDialogBinding.executePendingBindings();
 
         setTitle(DetailsDialogActivityViewModel.getFormattedName(result));
+    }
+
+    public void stop(View view){
+        this.finish();
     }
 }

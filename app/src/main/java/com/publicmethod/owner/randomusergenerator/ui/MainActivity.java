@@ -19,6 +19,8 @@ import com.publicmethod.owner.randomusergenerator.utils.RandomUserClient;
 import com.publicmethod.owner.randomusergenerator.utils.ServiceGenerator;
 import com.publicmethod.owner.randomusergenerator.viewmodels.MainActivityViewModel;
 
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -26,14 +28,14 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     /**
-     * A helper method for starting UserDetailsActivity.
+     * A helper method for starting UserDetailsEditorActivity.
      *
      * @param context The activity or fragment context starting {@link MainActivity}.class.
      * @return Intent containing the provided Context, result extra, and {@link MainActivity}.class.
      */
     public static Intent getStartIntent(Context context) {
         Intent intent = new Intent(context, MainActivity.class);
-            return intent;
+        return intent;
     }
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -109,4 +111,21 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList("results", mRandomResultsRecyclerViewBindingAdapter.getRandomUserResults());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        ArrayList results = savedInstanceState.getParcelableArrayList("results");
+        mRandomResultsRecyclerViewBindingAdapter.setRandomUserResults(results);
+        mRandomResultsRecyclerViewBindingAdapter.notifyDataSetChanged();
+        assert results != null;
+        Log.d(TAG, "onRestoreInstanceState: " + results.toString());
+    }
+
 }

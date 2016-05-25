@@ -70,6 +70,10 @@ public class RandomResultsRecyclerViewBindingAdapter extends RecyclerView.Adapte
         }
     }
 
+    public ArrayList<Result> getRandomUserResults() {
+        return mRandomUserResults;
+    }
+
     public static class ContactsViewHolder extends RecyclerView.ViewHolder {
         private ListItemCardBinding mViewDataBinding;
 
